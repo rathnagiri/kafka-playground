@@ -22,8 +22,11 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
       ALLOW_PLAINTEXT_LISTENER: "yes"
       KAFKA_LISTENERS: "PLAINTEXT://:9092"
-      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://localhost:9092"
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:9092"
       KAFKA_BROKER_ID: "1" # Unique ID for the broker in the cluster
+      KAFKA_MESSAGE_MAX_BYTES: "200000000"  # 200 MB
+      KAFKA_REPLICA_FETCH_MAX_BYTES: "200000000"  # Ensure this matches the above
+      KAFKA_FETCH_MAX_BYTES: "200000000"  # Adjust fetch size accordingly
     depends_on:
       - zookeeper
 
