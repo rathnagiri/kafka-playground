@@ -2,16 +2,9 @@
 
 namespace EmployeeApplicationApi.Models;
 
-public class Employee
+public class Employee(Guid id, string name, string surname)
 {
-    public int Id { get; set; } 
-    public string Name { get; set; }
-    public string Surname { get; set; }
-
-    public Employee(int id, string name, string surname)
-    {
-        Id = id;
-        Name = name;
-        Surname = surname;
-    }
+    public Guid Id { get; set; } = id;
+    public string Name { get; set; } = name;
+    public string Surname { get; set; } = surname;
 }
