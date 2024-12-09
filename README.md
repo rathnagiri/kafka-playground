@@ -1,1 +1,1 @@
-# kafka-learning
+# kafka-playground
